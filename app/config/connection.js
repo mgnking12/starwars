@@ -26,17 +26,17 @@ var source = {
 
 
 // TODO: connect your jawsDB connection witht he mysql connection.
-var connection = mysql.createConnection( //enter connection here);
+var connection = mysql.createConnection(source.jawsDB);
 
 
 
-        // Replace the connection code here with one to connect to you JawsDB connection.
-        connection.connect(function(err) {
-            if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
-            }
-            console.log('connected as id ' + connection.threadId);
-        });
+// Replace the connection code here with one to connect to you JawsDB connection.
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
+    console.log('connected as id ' + connection.threadId);
+});
 
-        module.exports = connection;
+module.exports = connection;
